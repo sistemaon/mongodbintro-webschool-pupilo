@@ -1,8 +1,12 @@
 # mongodbintro-webschool-pupilo
 
-O que é o MongoDB ?
+## O que é o MongoDB ?
+
 MongoDB é um Banco de Dados noSQL (Not Only SQL), o que significa que ele é um banco não relacional, qualquer banco que não seja Relacional será um banco NoSQL. Todos seus recursos, características e funcionalidades foram desenvolvidas pensando um Banco de Dados Orientado a Documentos (Document Database). Para trabalhar com o MongoDb iremos utilizar como linguagem de acesso direto, o JavaScript, e a modelagem de como os dados ficarão, nós utilizamos JSON (JavaScript Object Notation).
+
 Exemplo:
+
+```js
 {
 	"_id": "462606",
 	"nome": "Sistema On",
@@ -19,7 +23,10 @@ Exemplo:
 	"hobbies": [ "games", "bike", "artesão cervejeiro", "rock n roll", "tea"  ]
 }
 
+```
+
 Vantagem muito importante deste design é que equipes de desenvolvimento podem muito bem projetar modelos de dados para suportar o acesso de dados comuns.
+
 Como por exemplo, uma equipe desenvolvendo um site de notícias podem estruturar seu modelo de dados, para que a página mais vista necessite apenas de uma única consulta (query) do banco de dados, e pode ser feito de uma maneira elegante e é suportado pelo MongoDB.
 
 Comparando com uma estrutura relacional, exigindo alguns joins entre as tabelas, ou uma maneira desnecessária de armazenar valores múltiplos em um único campo de uma tabela.
@@ -36,8 +43,12 @@ Para deixar bem claro: o Schema é onde definimos todos os campos desejados e se
 
 Em resumo MongoDB permite que os desenvolvedores projetam modelos de dados que eficientemente suportam padrões de acesso de dados comum, também é projetado para suportar práticas de engenharia de software ágil e atender a escalabilidade e necessidades de aplicações modernas de desempenho.
 
-CRIANDO DOCS
+### CRIANDO DOCS
+
 No MongoDB, para criar um documento, podemos inserir 	no nosso banco dentro da nossa collection (colecão). Podemos utilizar o comando use nomeBanco para criar o Banco, e o método db.nomeCollection.insertOne() para adicionar documentos na nossa colecão. Não precise criar a colecão, pois se não existir, e ao inserir documentos, o Mongo automaticamente cria e insere em nosso banco.
+
+
+```js
 <Terminal>
 use mongonode
 mongonode> db.users.insertOne({ "nome": "Alex", "idade": 23, "casado": false  });
@@ -47,7 +58,12 @@ mongonode> db.users.insertOne({ "nome": "Alex", "idade": 23, "casado": false  })
 }
 </Terminal>
 
-Para buscar os documentos, usamos o método db.nomeCollection.find()
+```
+
+Para buscar os documentos, usamos o método `db.nomeCollection.find()`
+
+
+```js
 <Terminal>
 mongonode> db.users.find()
 {
@@ -75,6 +91,8 @@ mongonode> db.users.find()
 }
 </Terminal>
 
+```
+
 
 
 
@@ -86,7 +104,10 @@ mongonode> db.users.find()
 Fetched 0 record(s) in 1ms
 </Terminal>
 
-Para adicionar vários documentos de uma vez na collection, O MongoDB possui um método db.nomeCollection.insertMany() , em que ele espera um array
+Para adicionar vários documentos de uma vez na collection, O MongoDB possui um método db.nomeCollection.insertMany() , em que ele espera um array:
+
+
+```js
 <Terminal>
 mongonode> db.users.insertMany(
     [
@@ -149,8 +170,11 @@ mongonode> db.users.find()
 }
 </Terminal>
 
+```
+
 Como o MongoDB permite passarmos o nosso próprio _id , caso o _id esteja duplicado ao inserir na collection , quando o MongoDB encontra o _id duplicado, ele simplesmente para de inserir documentos na colecão, e nos passa um erro, porém insere todos os documentos anteriores (antes de passar o erro). 
 
+```js
 <Terminal>
 db.users.insertMany(
     [
@@ -181,7 +205,11 @@ db.users.insertMany(
     ]
 );
 
+```
+
 E QUERY    [thread1] BulkWriteError: write error at item 3 in bulk operation :
+
+```js
 BulkWriteError({
   "writeErrors": [
     {
@@ -205,6 +233,8 @@ BulkWriteError({
   "upserted": [ ]
 })
 </Terminal>
+
+```
 
 Repare nessa parte do erro:
 "writeErrors": [
