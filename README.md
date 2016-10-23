@@ -516,7 +516,7 @@ mongonode> db.users.find(query)
     "cidade": "Klondike",
     "estado": "Florida",
     "cep": 36350
-  },
+   },
   "hobbies": [
     "livros",
     "natação",
@@ -543,7 +543,9 @@ Repare na seguinte estrutura:
 ```
 
 Essa estrutura é uma estrutura aninhada, para que possamos fazer qualquer tipo de busca em uma estrutura como esta, utilizamos ponto (.), em outras palavras notação de ponto (dot notation).
+
 A sintaxe da notação de ponto funciona para documentos aninhados em qualquer nível.
+
 Temos um campo endereco, e este campo armazena um documento aninhado com os demais campos dentro do campo endereco.
 Para que possamos buscar um documento com o nome de um estado específico, California por exemplo, nesta estrutura, passamos a query da seguinte forma, "endereco.estado": "California" .
 
@@ -576,12 +578,16 @@ mongonode> db.users.find(query)
 ```
 
 
-CURSORS
+### CURSORS
+
 Cursor é um ponteiro (pointer) ao conjunto de resultados de uma query. Podemos percorrer um cursor para obter resultados. 
 O método find retorna um cursor. Vamos fazer um pequeno exemplo utilizando o método find e percorrer seu cursor para buscar resultados de uma query.
+
 Primeiro criaremos uma variável passando nossa query, depois iremos atribuir nosso cursor em uma variável, logo após, iremos criar uma função passando o nome da nossa collection como parâmetro e que retorne algumas informações dos usuários, e por último, a mágica acontecendo, onde estamos percorrendo o nosso cursor para buscar resultados.
+
 Veja mais sobre cursor na documentação do MongoDB (https://docs.mongodb.com/v3.0/core/cursors/). 
 
+```js
 <Terminal>
 mongonode> var query = {casado: false}
 mongonode> var cursor = db.users.find(query)
@@ -605,3 +611,4 @@ mongonode> cursor.map(fn)
   "nome: Donaldson Dillon. Idade: 19. Hobbies: bike,filmes,yoga,tecnologia."
 ]
 </Terminal>
+```
