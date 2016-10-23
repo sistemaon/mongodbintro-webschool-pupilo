@@ -204,7 +204,6 @@ db.users.insertMany(
         },
     ]
 );
-
 ```
 
 E QUERY    [thread1] BulkWriteError: write error at item 3 in bulk operation :
@@ -237,6 +236,9 @@ BulkWriteError({
 ```
 
 Repare nessa parte do erro:
+
+
+```js
 "writeErrors": [
     {
       "index": 3,
@@ -250,16 +252,21 @@ Repare nessa parte do erro:
       }
     }
   ]
+```
 
 O MongoDB está reclamando do index 3 ao ser inserido, e sua mensagem de erro (errmsg) é chave duplicada (duplicate key) na collection dentro do banco, e logo em seguida, passando o documento que não pôde ser inserido.
 
-
-
-
 Repare nessa outra parte do erro:
+
+
+```js
 "nInserted": 3
+```
 
 Isso significa que o MongoDB inseriu 3 documentos, no qual, foram os 3 primeiros, e ao encontrar o erro, ele parou de inserir e nos enviou o erro.
+
+
+```js
 <Terminal>
 mongonode> db.users.find()
 {
@@ -281,9 +288,12 @@ mongonode> db.users.find()
   "casado": true
 }
 </Terminal>
+```
 
 MongoDB possui um segundo argumento (parâmetro) chamado ordered que possamos passar ao inserir os documento, o que ele faz é, ao encontrar algum erro ele ainda vai tentar inserir os documentos restantes, e ao finalizar seu processo, ae sim que, ele nos envia o erro. O seu valor por padrão é true, e para que o MongoDB continue realizando as inserções mesmo ao econtrar um erro, devemos passar o seu valor como false.
 
+
+```js
 <Terminal>
 db.users.insertMany(
     [
@@ -323,8 +333,12 @@ db.users.insertMany(
       "ordered": false
     }
 );
+```
 
 E QUERY    [thread1] BulkWriteError: write error at item 3 in bulk operation :
+
+
+```js
 BulkWriteError({
   "writeErrors": [
     {
@@ -348,8 +362,12 @@ BulkWriteError({
   "upserted": [ ]
 })
 </Terminal>
+```
 
 Olhe novamente nessa parte do erro:
+
+
+```js
 "writeErrors": [
     {
       "index": 3,
@@ -363,14 +381,19 @@ Olhe novamente nessa parte do erro:
       }
     }
   ]
+```
 
 Nada mudou comparando com o erro anterior, MongoDB continua reclamando do documento do index 3 ao ser inserido, erro de chave duplicada e novamente passando o documento que não pôde ser inserido.
 
 Mas repare nessa outra parte do erro:
+
+```js
 "nInserted": 4
+```
 
-MongoDB ‘ignorou’ o documento com chave duplicada, inseriu os documentos restantes e logo depois, passou o erro.
+MongoDB *‘ignorou’* o documento com chave duplicada, inseriu os documentos restantes e logo depois, passou o erro.
 
+```js
 <Terminal>
 mongonode> db.users.find()
 {
@@ -398,6 +421,7 @@ mongonode> db.users.find()
   "casado": true
 }
 </Terminal>
+```
 
 
 Por padrão, o Object Id é criado automaticamente pelo MongoDB caso não forneça um. Todas as collections possui um index primário único em seu campo _id, isso permite eficientimente buscar documentos pelo seu próprio _id. Como dito antes, por padrão, MongoDB cria valores para o campo _id do tipo Object ID, que é um tipo de valor definido em spec (especificação) BSON.
@@ -412,8 +436,11 @@ Logo após tem os 2 valores byte que contém o ProcessID (PID).
 E os últimos 3 valores byte são um contador (Counter), garantindo que todos os ObjetctId são únicos.
 
 
-LENDO DOCS
+### LENDO DOCS
+
 No MongoDB podemos ler os documentos com o método find, passando como db.nomeCollection.find(), porém dessa forma, o banco retornará todos os documentos encontrados naquela collection. Porém ele nos permite passar query, assim podemos buscar documentos específicos. 
+
+```js
 <Terminal>
 mongonode> var query = {casado: false}
 mongonode> db.users.find(query)
@@ -436,18 +463,24 @@ mongonode> db.users.find(query)
   "casado": false
 }
 </Terminal>
+```
 
 
 MongoDB permite contar (count) os documentos que possuímos no banco. O count retorna a contagem de documentos que corresponde a uma query do find().
+
+```js
 <Terminal>
 mongonode> var query = {casado: false}
 mongonode> db.users.find(query).count()
 3
 </Terminal>
+```
 
 * Vamos trabalhar com uma collection que possui mais informações. Drop sua collection antiga e insert a nova collection (usersMongo.json).
 
 Podemos utilizar selectores adicionais em nossa query ao buscar documentos.
+
+```js
 <Terminal>
 mongonode> var query = {casado: false, idade: 21}
 mongonode> db.users.find(query)
@@ -492,11 +525,14 @@ mongonode> db.users.find(query)
   ]
 }
 </Terminal>
+```
 
 
 MongoDB permite que possamos buscar documentos embutidos (embedded documents), tais documentos em array e outras estruturas aninhadas (nested structure).
 
 Repare na seguinte estrutura:
+
+```js
  "endereco": {
     "numero": Number,
     "rua": String,
@@ -504,12 +540,15 @@ Repare na seguinte estrutura:
     "estado": String,
     "cep": Number
   }
+```
 
 Essa estrutura é uma estrutura aninhada, para que possamos fazer qualquer tipo de busca em uma estrutura como esta, utilizamos ponto (.), em outras palavras notação de ponto (dot notation).
 A sintaxe da notação de ponto funciona para documentos aninhados em qualquer nível.
 Temos um campo endereco, e este campo armazena um documento aninhado com os demais campos dentro do campo endereco.
 Para que possamos buscar um documento com o nome de um estado específico, California por exemplo, nesta estrutura, passamos a query da seguinte forma, "endereco.estado": "California" .
 
+
+```js
 <Terminal>
 mongonode> var query = {"endereco.estado": "California"}
 mongonode> db.users.find(query)
@@ -534,6 +573,7 @@ mongonode> db.users.find(query)
   ]
 }
 </Terminal>
+```
 
 
 CURSORS
