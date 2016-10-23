@@ -141,7 +141,7 @@ mongonode> db.users.insertMany(
     ObjectId("58094719cd5972fe6179f71b"),
     ObjectId("58094719cd5972fe6179f71c")
   ]
-} 
+}
 
 mongonode> db.users.find()
 {
@@ -172,7 +172,7 @@ mongonode> db.users.find()
 
 ```
 
-Como o MongoDB permite passarmos o nosso próprio _id , caso o _id esteja duplicado ao inserir na collection , quando o MongoDB encontra o _id duplicado, ele simplesmente para de inserir documentos na colecão, e nos passa um erro, porém insere todos os documentos anteriores (antes de passar o erro). 
+Como o MongoDB permite passarmos o nosso próprio _id , caso o _id esteja duplicado ao inserir na collection , quando o MongoDB encontra o _id duplicado, ele simplesmente para de inserir documentos na colecão, e nos passa um erro, porém insere todos os documentos anteriores (antes de passar o erro).
 
 ```js
 <Terminal>
@@ -328,7 +328,7 @@ db.users.insertMany(
 	    "casado" : true,
         },
     ],
-    
+
     {
       "ordered": false
     }
@@ -426,7 +426,7 @@ mongonode> db.users.find()
 
 Por padrão, o Object Id é criado automaticamente pelo MongoDB caso não forneça um. Todas as collections possui um index primário único em seu campo _id, isso permite eficientimente buscar documentos pelo seu próprio _id. Como dito antes, por padrão, MongoDB cria valores para o campo _id do tipo Object ID, que é um tipo de valor definido em spec (especificação) BSON.
 E é estruturada da seguinte forma:
-
+![alt tag](https://raw.githubusercontent.com/sistemaon/mongodbintro-webschool-pupilo/master/obidmongo.png)
 					                                Imagem de https://university.mongodb.com
 
 Significa que, o banco de dados utiliza esses valores a fim de construir um ObjectId. O ObjectId são valores strings hexadecimal de 12 byte.
@@ -438,7 +438,7 @@ E os últimos 3 valores byte são um contador (Counter), garantindo que todos os
 
 ### LENDO DOCS
 
-No MongoDB podemos ler os documentos com o método find, passando como db.nomeCollection.find(), porém dessa forma, o banco retornará todos os documentos encontrados naquela collection. Porém ele nos permite passar query, assim podemos buscar documentos específicos. 
+No MongoDB podemos ler os documentos com o método find, passando como db.nomeCollection.find(), porém dessa forma, o banco retornará todos os documentos encontrados naquela collection. Porém ele nos permite passar query, assim podemos buscar documentos específicos.
 
 ```js
 <Terminal>
@@ -580,12 +580,12 @@ mongonode> db.users.find(query)
 
 ### CURSORS
 
-Cursor é um ponteiro (pointer) ao conjunto de resultados de uma query. Podemos percorrer um cursor para obter resultados. 
+Cursor é um ponteiro (pointer) ao conjunto de resultados de uma query. Podemos percorrer um cursor para obter resultados.
 O método find retorna um cursor. Vamos fazer um pequeno exemplo utilizando o método find e percorrer seu cursor para buscar resultados de uma query.
 
 Primeiro criaremos uma variável passando nossa query, depois iremos atribuir nosso cursor em uma variável, logo após, iremos criar uma função passando o nome da nossa collection como parâmetro e que retorne algumas informações dos usuários, e por último, a mágica acontecendo, onde estamos percorrendo o nosso cursor para buscar resultados.
 
-Veja mais sobre cursor na documentação do MongoDB (https://docs.mongodb.com/v3.0/core/cursors/). 
+Veja mais sobre cursor na documentação do MongoDB (https://docs.mongodb.com/v3.0/core/cursors/).
 
 ```js
 <Terminal>
