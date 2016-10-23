@@ -1,0 +1,433 @@
+db.users.insertMany(
+[
+  {
+    "nome": "Faye Bowen",
+    "idade": 18,
+    "casado": true,
+    "poupanca": "R$2,462.64",
+    "endereco": { "numero": 909, "rua": "Laurel Avenue", "cidade": "Grill", "estado": "North Carolina", "cep": 29878 },
+    "hobbies": [
+      "livros",
+      "rock n roll",
+      "teatro",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Lawrence Stanley",
+    "idade": 23,
+    "casado": true,
+    "poupanca": "R$2,659.59",
+    "endereco": { "numero": 185, "rua": "Ralph Avenue", "cidade": "Swartzville", "estado": "Puerto Rico", "cep": 6890 },
+    "hobbies": [
+      "bike",
+      "correr",
+      "teatro",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Liz Walters",
+    "idade": 25,
+    "casado": false,
+    "poupanca": "R$2,996.42",
+    "endereco": { "numero": 288, "rua": "Tabor Court", "cidade": "Mathews", "estado": "Federated States Of Micronesia", "cep": 2872 },
+    "hobbies": [
+      "livros",
+      "natação",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Whitney Sparks",
+    "idade": 32,
+    "casado": true,
+    "poupanca": "R$1,078.30",
+    "endereco": { "numero": 353, "rua": "Moore Place", "cidade": "Grandview", "estado": "Maryland", "cep": 15908 },
+    "hobbies": [
+      "livros",
+      "correr",
+      "yoga",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Jennifer Nash",
+    "idade": 24,
+    "casado": false,
+    "poupanca": "R$3,379.81",
+    "endereco": { "numero": 942, "rua": "Ridgecrest Terrace", "cidade": "Welch", "estado": "Georgia", "cep": 20443 },
+    "hobbies": [
+      "bike",
+      "filmes",
+      "teatro",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Hoover Quinn",
+    "idade": 26,
+    "casado": true,
+    "poupanca": "R$3,818.39",
+    "endereco": { "numero": 255, "rua": "Bethel Loop", "cidade": "Hillsboro", "estado": "New York", "cep": 34904 },
+    "hobbies": [
+      "games",
+      "correr",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Ramsey Silva",
+    "idade": 23,
+    "casado": true,
+    "poupanca": "R$3,822.36",
+    "endereco": { "numero": 847, "rua": "Wilson Avenue", "cidade": "Gambrills", "estado": "California", "cep": 7452 },
+    "hobbies": [
+      "games",
+      "rock n roll",
+      "teatro",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Antonia Moody",
+    "idade": 26,
+    "casado": true,
+    "poupanca": "R$2,923.76",
+    "endereco": { "numero": 925, "rua": "Hoyt Street", "cidade": "Foxworth", "estado": "District Of Columbia", "cep": 14076 },
+    "hobbies": [
+      "bike",
+      "natação",
+      "teatro",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Katelyn Sheppard",
+    "idade": 20,
+    "casado": true,
+    "poupanca": "R$2,146.41",
+    "endereco": { "numero": 974, "rua": "Seaview Avenue", "cidade": "Sabillasville", "estado": "Virginia", "cep": 39970 },
+    "hobbies": [
+      "livros",
+      "filmes",
+      "yoga",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Boyd Rodriquez",
+    "idade": 20,
+    "casado": true,
+    "poupanca": "R$2,522.01",
+    "endereco": { "numero": 314, "rua": "Seigel Street", "cidade": "Sidman", "estado": "Indiana", "cep": 28418 },
+    "hobbies": [
+      "games",
+      "filmes",
+      "teatro",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Victoria Medina",
+    "idade": 31,
+    "casado": false,
+    "poupanca": "R$1,043.88",
+    "endereco": { "numero": 342, "rua": "Fleet Street", "cidade": "Germanton", "estado": "Montana", "cep": 32934 },
+    "hobbies": [
+      "bike",
+      "rock n roll",
+      "yoga",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Townsend Davis",
+    "idade": 24,
+    "casado": true,
+    "poupanca": "R$2,005.73",
+    "endereco": { "numero": 138, "rua": "Seaview Court", "cidade": "Nord", "estado": "Missouri", "cep": 9453 },
+    "hobbies": [
+      "games",
+      "filmes",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Larson Butler",
+    "idade": 29,
+    "casado": true,
+    "poupanca": "R$2,959.51",
+    "endereco": { "numero": 126, "rua": "Rutherford Place", "cidade": "Dellview", "estado": "Wyoming", "cep": 31993 },
+    "hobbies": [
+      "livros",
+      "filmes",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Bobbi Suarez",
+    "idade": 19,
+    "casado": true,
+    "poupanca": "R$1,735.67",
+    "endereco": { "numero": 739, "rua": "Bayview Avenue", "cidade": "Saddlebrooke", "estado": "Guam", "cep": 973 },
+    "hobbies": [
+      "games",
+      "filmes",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Fitzgerald Booker",
+    "idade": 31,
+    "casado": true,
+    "poupanca": "R$3,530.85",
+    "endereco": { "numero": 472, "rua": "Beverley Road", "cidade": "Curtice", "estado": "Wisconsin", "cep": 29011 },
+    "hobbies": [
+      "games",
+      "rock n roll",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Natalia Prince",
+    "idade": 35,
+    "casado": true,
+    "poupanca": "R$2,515.84",
+    "endereco": { "numero": 683, "rua": "Louis Place", "cidade": "Snelling", "estado": "Vermont", "cep": 40758 },
+    "hobbies": [
+      "livros",
+      "natação",
+      "teatro",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Cecile Doyle",
+    "idade": 37,
+    "casado": false,
+    "poupanca": "R$3,957.19",
+    "endereco": { "numero": 756, "rua": "Bergen Avenue", "cidade": "Wolcott", "estado": "Virgin Islands", "cep": 10082 },
+    "hobbies": [
+      "bike",
+      "rock n roll",
+      "teatro",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Mathis Fowler",
+    "idade": 19,
+    "casado": true,
+    "poupanca": "R$3,771.10",
+    "endereco": { "numero": 108, "rua": "Ash Street", "cidade": "Century", "estado": "Michigan", "cep": 23959 },
+    "hobbies": [
+      "games",
+      "rock n roll",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Ollie Calhoun",
+    "idade": 22,
+    "casado": false,
+    "poupanca": "R$1,696.79",
+    "endereco": { "numero": 170, "rua": "Haring Street", "cidade": "Hendersonville", "estado": "Nebraska", "cep": 9934 },
+    "hobbies": [
+      "bike",
+      "natação",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Sargent Kemp",
+    "idade": 21,
+    "casado": false,
+    "poupanca": "R$3,003.14",
+    "endereco": { "numero": 677, "rua": "Calder Place", "cidade": "Glidden", "estado": "Alaska", "cep": 37378 },
+    "hobbies": [
+      "bike",
+      "rock n roll",
+      "teatro",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Case Whitney",
+    "idade": 27,
+    "casado": false,
+    "poupanca": "R$1,197.42",
+    "endereco": { "numero": 709, "rua": "Himrod Street", "cidade": "Worcester", "estado": "North Dakota", "cep": 22725 },
+    "hobbies": [
+      "bike",
+      "natação",
+      "yoga",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Olive Castro",
+    "idade": 33,
+    "casado": false,
+    "poupanca": "R$3,263.37",
+    "endereco": { "numero": 640, "rua": "Arkansas Drive", "cidade": "Rivera", "estado": "Colorado", "cep": 12133 },
+    "hobbies": [
+      "livros",
+      "rock n roll",
+      "teatro",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Catalina Conner",
+    "idade": 24,
+    "casado": true,
+    "poupanca": "R$2,200.89",
+    "endereco": { "numero": 598, "rua": "Sunnyside Court", "cidade": "Gilgo", "estado": "Oklahoma", "cep": 40536 },
+    "hobbies": [
+      "livros",
+      "correr",
+      "teatro",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Wyatt Santos",
+    "idade": 21,
+    "casado": true,
+    "poupanca": "R$3,635.47",
+    "endereco": { "numero": 595, "rua": "Holt Court", "cidade": "Hoehne", "estado": "Utah", "cep": 38903 },
+    "hobbies": [
+      "bike",
+      "rock n roll",
+      "yoga",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Robertson Roy",
+    "idade": 21,
+    "casado": false,
+    "poupanca": "R$1,987.49",
+    "endereco": { "numero": 805, "rua": "Matthews Place", "cidade": "Klondike", "estado": "Florida", "cep": 36350 },
+    "hobbies": [
+      "livros",
+      "natação",
+      "teatro",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Rodgers Barnett",
+    "idade": 33,
+    "casado": false,
+    "poupanca": "R$3,041.86",
+    "endereco": { "numero": 854, "rua": "Veranda Place", "cidade": "Waterloo", "estado": "Nevada", "cep": 19010 },
+    "hobbies": [
+      "livros",
+      "filmes",
+      "yoga",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Spence Mcguire",
+    "idade": 19,
+    "casado": false,
+    "poupanca": "R$1,153.74",
+    "endereco": { "numero": 109, "rua": "Diamond Street", "cidade": "Coventry", "estado": "Texas", "cep": 15212 },
+    "hobbies": [
+      "games",
+      "filmes",
+      "teatro",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Porter Mccarty",
+    "idade": 21,
+    "casado": true,
+    "poupanca": "R$3,715.42",
+    "endereco": { "numero": 995, "rua": "Dunne Court", "cidade": "Glendale", "estado": "Louisiana", "cep": 28293 },
+    "hobbies": [
+      "games",
+      "natação",
+      "teatro",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Becker Wood",
+    "idade": 25,
+    "casado": false,
+    "poupanca": "R$1,593.39",
+    "endereco": { "numero": 402, "rua": "Halsey Street", "cidade": "Jardine", "estado": "American Samoa", "cep": 39621 },
+    "hobbies": [
+      "games",
+      "rock n roll",
+      "yoga",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Courtney Holden",
+    "idade": 18,
+    "casado": false,
+    "poupanca": "R$3,424.43",
+    "endereco": { "numero": 961, "rua": "Alice Court", "cidade": "Driftwood", "estado": "New Jersey", "cep": 29136 },
+    "hobbies": [
+      "livros",
+      "correr",
+      "teatro",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Alvarez Vasquez",
+    "idade": 29,
+    "casado": false,
+    "poupanca": "R$3,254.72",
+    "endereco": { "numero": 258, "rua": "Hall Street", "cidade": "Brewster", "estado": "New Mexico", "cep": 10171 },
+    "hobbies": [
+      "games",
+      "correr",
+      "teatro",
+      "viajar"
+    ]
+  },
+  {
+    "nome": "Karin Peck",
+    "idade": 22,
+    "casado": true,
+    "poupanca": "R$1,222.89",
+    "endereco": { "numero": 951, "rua": "Dewitt Avenue", "cidade": "Motley", "estado": "Kansas", "cep": 31372 },
+    "hobbies": [
+      "livros",
+      "natação",
+      "yoga",
+      "tecnologia"
+    ]
+  },
+  {
+    "nome": "Donaldson Dillon",
+    "idade": 19,
+    "casado": false,
+    "poupanca": "R$2,181.14",
+    "endereco": { "numero": 693, "rua": "Prospect Avenue", "cidade": "Fresno", "estado": "Arizona", "cep": 17794 },
+    "hobbies": [
+      "bike",
+      "filmes",
+      "yoga",
+      "tecnologia"
+    ]
+  }
+]
+);
