@@ -427,7 +427,7 @@ mongonode> db.users.find()
 Por padrão, o Object Id é criado automaticamente pelo MongoDB caso não forneça um. Todas as collections possui um index primário único em seu campo _id, isso permite eficientimente buscar documentos pelo seu próprio _id. Como dito antes, por padrão, MongoDB cria valores para o campo _id do tipo Object ID, que é um tipo de valor definido em spec (especificação) BSON.
 E é estruturada da seguinte forma:
 ![alt tag](https://raw.githubusercontent.com/sistemaon/mongodbintro-webschool-pupilo/master/obidmongo.png)
-					                                Imagem de https://university.mongodb.com
+					                Imagem de https://university.mongodb.com
 
 Significa que, o banco de dados utiliza esses valores a fim de construir um ObjectId. O ObjectId são valores strings hexadecimal de 12 byte.
 Os 4 primeiros valores byte (Date), são valores representando os segundos desde a era Unix (Unix epoch) – (https://pt.wikipedia.org/wiki/Era_Unix).
@@ -489,7 +489,7 @@ mongonode> db.users.find(query)
   "nome": "Sargent Kemp",
   "idade": 21,
   "casado": false,
-  "poupanca": "R$3,003.14",
+  "poupanca": 3.00314,
   "endereco": {
     "numero": 677,
     "rua": "Calder Place",
@@ -509,7 +509,7 @@ mongonode> db.users.find(query)
   "nome": "Robertson Roy",
   "idade": 21,
   "casado": false,
-  "poupanca": "R$1,987.49",
+  "poupanca": 1.98749,
   "endereco": {
     "numero": 805,
     "rua": "Matthews Place",
@@ -559,7 +559,7 @@ mongonode> db.users.find(query)
   "nome": "Ramsey Silva",
   "idade": 23,
   "casado": true,
-  "poupanca": "R$3,822.36",
+  "poupanca": 3.82236,
   "endereco": {
     "numero": 847,
     "rua": "Wilson Avenue",
